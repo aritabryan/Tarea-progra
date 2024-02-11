@@ -45,6 +45,17 @@ public class Tarea2_Progra1 {
                     }
                     break;
                 case 6:
+                    
+                    System.out.println("Ingrese una cadena: ");
+                    duki.nextLine();
+                    String main = duki.nextLine();
+                    System.out.println("Ingrese otra cadena: ");
+                    String sub = duki.nextLine();
+                    if(contains(main, sub)){
+                        System.out.println("El string principal contiene el string secundario.");
+                    }else{
+                        System.out.println("El string principal no contiene el string secundario");
+                    }
                     break;
                             
             }
@@ -67,5 +78,19 @@ public class Tarea2_Progra1 {
         }else{
             return false;
         }
+    }
+       public static boolean contains(String main, String sub) {
+        for (int i = 0; i <= main.length() - sub.length(); i++) {
+            int j;
+            for (j = 0; j < sub.length(); j++) {
+                if (main.charAt(i + j) != sub.charAt(j)) {
+                    break;
+                }
+            }
+            if (j == sub.length()) {
+                return true;
+            }
+        }
+        return false;
     }
 }
